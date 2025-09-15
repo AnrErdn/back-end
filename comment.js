@@ -40,24 +40,21 @@ function submitComment() {
 }
 
 function renderComments() {
-  const commentsSection = document.getElementById('commentsSection');
-  document.getElementById('commentsSection').innerHTML = '';
-
+  const commentsDiv = document.getElementById('c');
+  commentsDiv.innerHTML = '';
+  
   for (let i = 0; i < comments.length; i++) {
     const currentComment = comments[i];
-
-    const commentDiv = document.createElement('div');
-    commentDiv.className = 'bg-gray-100 rounded-md p-3 mb-4';
-
-    commentDiv.innerHTML = `
+    commentsDiv.innerHTML += `
+    <div class="bg-gray-100 rounded-md p-3 mb-4">
       <p class="font-semibold">${currentComment.name}</p>
       <p>${currentComment.comment}</p>
       <div class="text-xs text-gray-500 mt-2 flex justify-end space-x-4">
         <span>${currentComment.date}</span>
         <span>${currentComment.time}</span>
       </div>
+    </div>
     `;
-    commentsSection.appendChild(commentDiv);
   }
 }
 
