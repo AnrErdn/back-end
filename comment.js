@@ -5,7 +5,7 @@ function submitComment() {
   const comment = document.getElementById('comment').value.trim();
 
   if (!name || !comment) {
-    alert('Please enter both name and comment!');
+    alert('Please enter both name and comment!!');
     return;
   }
 
